@@ -1,8 +1,31 @@
-Welcome to your new dbt project!
+# Bootcamp Engenharia de Dados - DBT
 
-### Using the starter project
+###  Instalando DBT
+```
+pip install dbt
+```
 
-Try running the following commands:
+
+### Criando perfil
+Crie um arquivo `~/.dbt/profiles.yml` com o seguinte conteúdo:
+   ```yaml
+   redshift:
+      target: dev
+      outputs:
+        dev:
+          type: redshift
+          threads: 2
+          host: seu-host-redshift
+          port: 5439
+          user: seu-usuario
+          pass: sua-senha
+          dbname: nome-do-db
+          schema: dbt_dev_bootcamp
+   ```
+
+### Executando o projeto
+
+Acesse a pasta da turma e tente executar:
 - dbt run
 - dbt test
 
